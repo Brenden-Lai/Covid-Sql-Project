@@ -197,20 +197,4 @@ FROM
 	Percent_Population_Vaccinated
 ORDER BY 1,2,3
 
--- TOTAL CASES VS TOTAL DEATHS IN THE U.S.
-CREATE VIEW	US_Deaths AS
-SELECT
-	location, date, total_cases, total_deaths, (total_deaths/total_cases) * 100 AS Death_Percentage
-FROM
-	PortfolioProject..CovidDeaths
-WHERE
-	location LIKE '%states%'
-
-SELECT 
-	*
-FROM
-	US_Deaths
-ORDER BY
-	1,2
-
 -- 
